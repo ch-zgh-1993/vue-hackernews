@@ -28,3 +28,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# 构建项目，解析项目结构，了解vue项目的构建和vuex vue-router 服务端渲染的内容。
+
+
