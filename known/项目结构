@@ -1,0 +1,43 @@
+原项目通过 vue-cli 进行构建，本项目通过webpack构建。
+
+1. 配置环境
+2. 配置 node server
+3. vue loader 出现错误，在webpack.base.configjs
+没有成功引入 vue loader
+4. 后来直接替换了package.json,造成的babel插件没有安装到，安装就好了。
+ Unknown plugin "transform-vue-jsx" specified
+babelrc 文件中引用了，需要npm install babel-plugin-transform-vue-jsx --save-dev
+npm install babel-preset-stage-2 --save-dev
+5. 项目运行
+运行一直loading时，可以打开资源页面
+https://news.ycombinator.com/
+
+逐步测试了解结构：
+文件内容：
+mainfest.json: 系统一些配置内容
+server.js:	配置系统的服务部分
+public:  静态资源
+
+build:
+webpack.base.config.js 作为基础配置
+client和server使用基础配置，分别做服务端和web端配置。
+setup 配置是以服务端配置和客户端配置对系统做配置。
+
+src:
+index.template.html: 服务端设置系统入口页面
+entry-server.js/entry-client 入口文件
+App.vue
+app.js 实例内容
+router/
+路由配置
+/components
+组件
+/store
+store仓库
+/util
+一些接口方法
+/views
+视图内容
+/api
+api方法
+
