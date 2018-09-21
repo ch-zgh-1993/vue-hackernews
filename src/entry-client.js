@@ -1,28 +1,16 @@
+/*
+* @Author: Zhang Guohua
+* @Date:   2018-09-17 19:39:19
+* @Last Modified by:   zgh
+* @Last Modified time: 2018-09-21 16:03:00
+* @Description: create by zgh
+* @GitHub: Savour Humor
+*/
 import Vue from 'vue'
 import 'es6-promise/auto'
 import { createApp } from './app'
-import ProgressBar from './components/ProgressBar.vue'
 
-// global progress bar
-const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
-document.body.appendChild(bar.$el)
-
-// a global mixin that calls `asyncData` when a route component's params change
-Vue.mixin({
-  beforeRouteUpdate (to, from, next) {
-    const { asyncData } = this.$options
-    if (asyncData) {
-      asyncData({
-        store: this.$store,
-        route: to
-      }).then(next).catch(next)
-    } else {
-      next()
-    }
-  }
-})
-
-const { app, router, store } = createApp()
+const { app } = createApp()
 
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.

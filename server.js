@@ -1,3 +1,11 @@
+/*
+* @Author: Zhang Guohua
+* @Date:   2018-09-17 19:02:28
+* @Last Modified by:   zgh
+* @Last Modified time: 2018-09-21 16:07:15
+* @Description: create by zgh
+* @GitHub: Savour Humor
+*/
 const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
@@ -85,6 +93,7 @@ function render (req, res) {
   res.setHeader("Server", serverInfo)
 
   const handleError = err => {
+    console.log(err)
     if (err.url) {
       res.redirect(err.url)
     } else if(err.code === 404) {
