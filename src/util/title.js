@@ -1,3 +1,11 @@
+/*
+* @Author: Zhang Guohua
+* @Date:   2018-09-19 14:13:46
+* @Last Modified by:   zgh
+* @Last Modified time: 2018-09-21 10:44:43
+* @Description: create by zgh
+* @GitHub: Savour Humor
+*/
 function getTitle (vm) {
   const { title } = vm.$options
   if (title) {
