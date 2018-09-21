@@ -2,7 +2,7 @@
 * @Author: Zhang Guohua
 * @Date:   2018-09-17 19:39:19
 * @Last Modified by:   zgh
-* @Last Modified time: 2018-09-21 16:21:16
+* @Last Modified time: 2018-09-21 17:01:52
 * @Description: create by zgh
 * @GitHub: Savour Humor
 */
@@ -18,10 +18,17 @@ const isDev = process.env.NODE_ENV !== 'production'
 export default context => {
   return new Promise((resolve, reject) => {
     const s = isDev && Date.now()
-    const { app } = createApp()
 
+    // 自定义解析, 理解路由的概念
+    // 处理 自定义页面， 404， app
+    // 
+    const { myRouter } = createApp()
     const { url } = context
+    if(url in myRouter){
+      return resolve(myRouter[url])
+    }else{
+      return reject({ code: 404 })
+    }
 
-    return resolve(app);
   })
 }

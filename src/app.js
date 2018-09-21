@@ -2,12 +2,13 @@
 * @Author: Zhang Guohua
 * @Date:   2018-09-19 11:23:07
 * @Last Modified by:   zgh
-* @Last Modified time: 2018-09-21 16:02:54
+* @Last Modified time: 2018-09-21 17:04:56
 * @Description: create by zgh
 * @GitHub: Savour Humor
 */
 import Vue from 'vue'
 import App from './App.vue'
+import Test from './components/test'
 
 
 // Expose a factory function that creates a fresh set of store, router,
@@ -21,8 +22,16 @@ export function createApp () {
     render: h => h(App)
   })
 
-  // expose the app, the router and the store.
-  // note we are not mounting the app here, since bootstrapping will be
-  // different depending on whether we are in a browser or on the server.
-  return { app }
+  // 去除 router ,自定义 router ,便于了解 router
+  // 增加自定义页面
+  // 
+  // 返回路由对象，由此判断返回哪个页面
+  // 
+  let myRouter = {
+    "/": app,
+    "/test": Test
+  };
+
+  return { myRouter }
+
 }
