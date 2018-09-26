@@ -2,7 +2,7 @@
 * @Author: Zhang Guohua
 * @Date:   2018-09-17 19:39:19
 * @Last Modified by:   zgh
-* @Last Modified time: 2018-09-21 17:01:52
+* @Last Modified time: 2018-09-21 18:52:37
 * @Description: create by zgh
 * @GitHub: Savour Humor
 */
@@ -21,6 +21,7 @@ export default context => {
 
     // 自定义解析, 理解路由的概念
     // 处理 自定义页面， 404， app
+    // 至于端口设置，路径分发到这里，随后再探究~
     // 
     const { myRouter } = createApp()
     const { url } = context

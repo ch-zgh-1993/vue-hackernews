@@ -1,22 +1,25 @@
 <!--
 * @Author: Zhang Guohua
-* @Date:   2018-09-21 16:31:51
+* @Date:   2018-09-26 14:24:38
 * @Last Modified by:   zgh
-* @Last Modified time: 2018-09-21 17:12:56
+* @Last Modified time: 2018-09-26 15:00:00
 * @Description: create by zgh
 * @GitHub: Savour Humor
 -->
 <template>
-	<div id="test">
-		<strong>{{ msg }}</strong>
-	</div>
+	<p @on:click="click">{{ msg }}</p>
 </template>
 
 <script type="text/javascript">
 	export default {
 		data () {
 			return {
-				msg: 'Hi Baby !'
+				msg: '我是一个组件'
+			}
+		},
+		methods: {
+			click () {
+				this.msg = 'hi';
 			}
 		}
 	}

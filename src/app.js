@@ -2,26 +2,22 @@
 * @Author: Zhang Guohua
 * @Date:   2018-09-19 11:23:07
 * @Last Modified by:   zgh
-* @Last Modified time: 2018-09-21 17:04:56
+* @Last Modified time: 2018-09-26 14:35:17
 * @Description: create by zgh
 * @GitHub: Savour Humor
 */
 import Vue from 'vue'
 import App from './App.vue'
-import Test from './components/test'
-
+import Test from './test'
 
 // Expose a factory function that creates a fresh set of store, router,
 // app instances on each call (which is called for each SSR request)
 export function createApp () {
 
-  // create the app instance.
-  // here we inject the router, store and ssr context to all child components,
-  // making them available everywhere as `this.$router` and `this.$store`.
+  // 创建 App 实例
   const app = new Vue({
     render: h => h(App)
   })
-
   // 去除 router ,自定义 router ,便于了解 router
   // 增加自定义页面
   // 
